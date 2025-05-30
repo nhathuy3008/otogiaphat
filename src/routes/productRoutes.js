@@ -1,0 +1,14 @@
+const express = require('express');
+const router = express.Router();
+const productController = require('../controllers/productController');
+const verifyRole = require('../middleware/authMiddleware');
+router.get('/', productController.getAllProducts);
+router.get('/search', productController.searchProductsByName);
+router.get('/featured', productController.getFeaturedProducts);
+router.get('/featured/:id', productController.getFeaturedProductById);
+router.put('/:id/featured', verifyRole('admin', 'master'), productController.updateFeaturedStatus);
+router.get('/:id', productController.getProductById);
+router.post('/create',verifyRole('admin','master'), productController.createProduct);
+router.put('/:id',verifyRole('admin','master'), productController.updateProduct);
+router.delete('/:id',verifyRole('admin','master'), productController.deleteProduct);
+module.exports = router;

@@ -122,7 +122,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3001', 'http://localhost:5173','https://fe-otobathanh.vercel.app','https://otobathanh-front-end.vercel.app','http://127.0.0.1:5500'],
+    origin: ['http://localhost:3001', 'http://localhost:5173','https://fe-otobathanh.vercel.app','https://otobathanh-front-end.vercel.app','https://giaphat-front-end.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,

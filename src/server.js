@@ -146,7 +146,9 @@ app.use('/api/favorites', favoriteRoutes);
 app.use('/api/categoriesStaff', categorystaffRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/', telegramWebhook);
-
+app.get("/", (req, res) => {
+    res.status(200).send("🚀 Gia Phát backend is running.");
+});
 // MongoDB Connection + Server Start
 // mongoose.connect('mongodb://localhost:27017/otogiaphat', { useNewUrlParser: true, useUnifiedTopology: true })
 //     .then(() => {
